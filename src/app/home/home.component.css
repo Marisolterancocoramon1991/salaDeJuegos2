@@ -1,0 +1,14 @@
+.botonesImagenes {
+    position: fixed; /* Establece la posición fija */
+    top: 50%; /* Alinea el contenedor al centro verticalmente */
+    left: 50%; /* Alinea el contenedor al centro horizontalmente */
+    transform: translate(-50%, -50%); /* Centra el contenedor */
+    z-index: 9999; /* Asegura que esté por encima de todo */
+}
+
+.botonesImagenes img {
+    width: 200px; /* Establece el ancho deseado */
+    height: auto; /* Mantiene la proporción de aspecto */
+    margin-right: 10px; /* Agrega espacio entre las imágenes */
+    border-radius: 10px; /* Agrega bordes redondeados */
+}

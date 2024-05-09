@@ -1,0 +1,74 @@
+<head>
+    <title>Cinco Botones</title>
+    <style>
+      /* Estilos para la barra de navegación */
+      .navbar {
+        background-color: #ffebcd; /* Color crema */
+        padding: 10px; /* Espaciado interno */
+        position: fixed; /* Fijar la barra en la parte superior */
+        top: 0; /* Alinear la barra en la parte superior */
+        width: 100%; /* Ancho completo */
+        z-index: 999; /* Colocar encima de otros elementos */
+      }
+      
+      /* Estilos para los botones */
+      .button {
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f0f0f0;
+        color: #333;
+      }
+      .button:hover {
+        background-color: #e0e0e0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+      @if(existeCorreo()) 
+      {
+        <span>
+          
+          <button class="button" id="buttonsalir" (click)="llevarLogin()">salir de la sesion</button>
+          
+
+        </span>
+      } @else 
+      {
+        <span>
+          <button class="button" id="buttonLogin" (click)="llevarLogin()">iniciar sesion</button>
+          
+        </span>
+      } 
+      <button class="button" id="buttonQuiensoy">¿Quièn soy?</button>
+      @if(existeCorreo()) 
+      {
+        <p #parrafoCorreo></p>
+      }
+    </div>
+    
+    <!-- Contenido de la página -->
+    <div style="margin-top: 50px;"> <!-- Espaciado para evitar que el contenido se superponga con la barra de navegación -->
+      <!-- Aquí puedes agregar el resto del contenido de tu página -->
+    </div>
+
+    
+  </body>
+  
+  @if(existeCorreo()) 
+  {
+    <span>
+      <div class="botonesImagenes">
+        <img src="../../assets/imagenes/ahorcado.png" (click)="llevarAhorcado()">
+        <img src="../../assets/imagenes/mayorMenor.webp" (click)="llevarMayorMenor()">
+        <img src="../../assets/imagenes/preguntados.jpg" (click)="llevarPreguntados()">
+      </div>
+    </span>
+  }
+ 
+  

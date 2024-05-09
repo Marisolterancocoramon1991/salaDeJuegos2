@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="form" id="loginForm" >
+        <input id= "username"type="text" placeholder="Username">
+        <input id = "password" type="password" placeholder="Password">
+        <button (click)="buscarUsuario()" id="loginBtn">Login</button><br><br>
+  <!--<button routerLink="home">Login</button>-->
+  <button (click)="animacionRegistro()" id="registerBtn" >Registrarse</button><br><br>
+  <button (click)="completarAutomaticamente()" id="ingresorapidoBtn" >ingreso rapido</button> 
+</div>
+<div class="form" id="registerForm" style="display: none;">
+  <input type="text" id="correo" placeholder="Correo electrónico">
+  <input type="password" id="contrasena" placeholder="Contraseña">
+  <button type="button" id="finalizarBtn" (click)="registrarUsuario()">Finalizar</button>
+</div>
+</div>
+
+
+
+

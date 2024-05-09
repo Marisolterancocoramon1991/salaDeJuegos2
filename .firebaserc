@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sala-de-juegos-kervin": {
+      "hosting": {
+        "sala-de-juegos-kervin": [
+          "sala-de-juegos-kervin"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sala-de-juegos-kervin"
+  }
+}

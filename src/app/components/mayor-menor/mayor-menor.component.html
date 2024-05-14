@@ -1,0 +1,33 @@
+<div class="overlay">
+  <ng-container *ngIf="existeCorreo()"> <!-- Utiliza *ngIf en lugar de @if -->
+    <mat-card class="example-card">
+      <div class="d-flex align-items-center flex-column">     
+        <div class="row text-center">
+          <h1 class="mt-2 text-white">{{ message }}</h1>
+          <div class="flex-row col-12">
+            <button class="botton" *ngIf="actionsBtn" (click)="changeCard(true)">
+              Mayor
+            </button>
+            <button class="botton" *ngIf="actionsBtn" (click)="changeCard(false)">
+              Menor
+            </button>
+            <button class="botton" (click)="goToHome()">salir</button>
+            <button class="botton" *ngIf="!actionsBtn" (click)="onSelectTryAgain()">
+              Jugar de nuevo
+            </button>                
+          </div>
+        </div>
+        <div class="row justify-content-around mt-5">
+          <!-- Itera sobre cada carta y coloca su imagen en la misma fila -->
+          <ng-container *ngFor="let card of cartasActuales">
+            <div class="col-6">
+              <img [src]="card.image" [height]="200" [width]="120">
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </mat-card>
+  </ng-container>
+  <!-- No es necesario el else en este caso, ya que solo hay dos opciones -->
+  <button class="botton" *ngIf="!existeCorreo()" (click)="goToHome()">Salir</button>
+</div>

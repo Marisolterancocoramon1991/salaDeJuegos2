@@ -1,0 +1,32 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo oscuro semi-transparente */
+    z-index: 9999;
+}
+.botton {
+    background-color: #4CAF50; /* Color de fondo */
+    border: none; /* Sin borde */
+    color: white; /* Color del texto */
+    padding: 15px 32px; /* Espaciado interno */
+    text-align: center; /* Alineación de texto */
+    text-decoration: none; /* Sin decoración de texto */
+    display: inline-block; /* Mostrar como bloque en línea */
+    font-size: 16px; /* Tamaño de fuente */
+    margin: 4px 2px; /* Margen */
+    transition-duration: 0.4s; /* Duración de la transición */
+    cursor: pointer; /* Cambio de cursor al pasar por encima */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Sombra */
+  }
+  
+  .botton:hover {
+    background-color: #e23d3d; /* Cambio de color de fondo al pasar el mouse */
+    color: rgb(14, 221, 211); /* Cambio de color del texto al pasar el mouse */
+  }

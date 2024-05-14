@@ -1,0 +1,62 @@
+<div class="main-container">
+    <!-- Utiliza *ngIf para controlar la visibilidad de los elementos -->
+    <ng-container *ngIf="existeCorreo()">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h1 class="display-2">PREGUNTADOS!</h1>
+                </div>
+            </div>
+        </div>
+
+        <ng-container *ngIf="!gameStarted">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-md-center">
+                        <button class="botton" extended color="primary" (click)="startGame()">
+                            Jugar de nuevo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="gameStarted && currentQuestion">
+            <div class="container">
+                <div class="jumbotron customBorder text-center text-white">
+                    <div class="row justify-content-center">
+                        <h2>Categoría: {{ getCategorySpanish(currentQuestion.category) }}</h2>
+                        <img [src]="image" class="preguntadosImage">
+                    </div>
+                    <div class="row mt-3">
+                        <h2>{{ currentQuestion.question.text }}</h2>
+                    </div>
+                    <div class="row mt-4 justify-content-center">
+                        <!-- Recuerda que no debes usar "this" dentro de las interpolaciones en Angular -->
+                        <button mat-raised-button color="primary" class="botton" *ngFor="let item of answers" (click)="checkAnswer(item)" [disabled]="isFinished" class="mt-3 col-10">
+                            {{ item }}
+                        </button>
+                    </div>
+                    <ng-container *ngIf="currentQuestion">
+                        <div class="alert alert-success mt-3" role="alert" *ngIf="guessed">
+                            Correcta!
+                        </div>
+                        <div class="alert alert-danger mt-3" role="alert" *ngIf="notGuessed">
+                            Incorrecta
+                        </div>
+                    </ng-container>
+                    <div class="row mt-3" *ngIf="isFinished">
+                        <div class="col text-md-center">
+                            <button class="botton" (click)="resetGame()">
+                                Jugar de nuevo
+                            </button>
+                            <button class="botton" (click)="goToHome()">Salir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </ng-container>
+    <!-- No utilices llaves para definir bloques de código en HTML o Angular -->
+    <button class="botton" (click)="goToHome()">Salir</button>
+</div>

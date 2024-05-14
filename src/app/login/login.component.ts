@@ -91,6 +91,7 @@ export class LoginComponent {
         }, 500);
       }
       const correoCargar = Validacion.cargarCorreo(correo);
+      
       this.router.navigateByUrl('/home');
     } catch (error) {
       console.error("Error al intentar iniciar sesión:", error);

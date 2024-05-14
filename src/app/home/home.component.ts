@@ -29,8 +29,9 @@ export class HomeComponent implements OnInit {
   }
 
   existeCorreo() {
-    const hayCorreo = Validacion.obtenerCorreo(); 
-    return !!hayCorreo;
+
+    const hayCorreo = Validacion.obtenerCorreo();
+    return hayCorreo;
   }
 
   llevarLogin() {
@@ -42,11 +43,11 @@ export class HomeComponent implements OnInit {
   }
 
   llevarMayorMenor() {
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('mayorMenor');
   }
 
   llevarPreguntados() {
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('preguntados');
   }
 }
 

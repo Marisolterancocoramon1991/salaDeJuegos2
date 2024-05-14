@@ -1,0 +1,76 @@
+.main-container {
+    position: relative;
+    z-index: 9999; 
+}
+
+.container {
+    padding-top: 50px;
+    z-index: 1; 
+    margin-top: -300px; 
+    height: 100vh;
+}
+
+.customBorder {
+    position: absolute;
+    top: 10px; /* Ajusta la posición vertical según sea necesario */
+    left: 50%; /* Centra horizontalmente el contenedor */
+    transform: translateX(-50%); /* Ajusta para centrar completamente horizontalmente */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: #98a3ad;
+}
+
+.transparent-container {
+    background-color: transparent;
+    /* Agrega cualquier otro estilo que necesites para el contenedor */
+}
+
+.display-2 {
+    color: red; /* Color rojo para el texto */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Sombreado blanco */
+    /* Agrega cualquier otro estilo que necesites para el texto */
+}
+
+
+
+.alert-danger {
+    background-color: rgb(223, 81, 81);
+    color: white;
+    border: 2px solid rgb(223, 81, 81);
+}
+
+.alert-success {
+    background-color: #036100;
+    color: white;
+    border: 2px solid rgb(63, 143, 73);
+}
+
+.preguntadosImage {    
+    height: 150px;
+    width: auto;
+}
+
+
+
+.botton {
+    background-color: #4CAF50; /* Color de fondo */
+    border: none; /* Sin borde */
+    color: white; /* Color del texto */
+    padding: 15px 32px; /* Espaciado interno */
+    text-align: center; /* Alineación de texto */
+    text-decoration: none; /* Sin decoración de texto */
+    display: inline-block; /* Mostrar como bloque en línea */
+    font-size: 16px; /* Tamaño de fuente */
+    margin: 4px 2px; /* Margen */
+    transition-duration: 0.4s; /* Duración de la transición */
+    cursor: pointer; /* Cambio de cursor al pasar por encima */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Sombra */
+  }
+  
+  .botton:hover {
+    background-color: #45a049; /* Cambio de color de fondo al pasar el mouse */
+    color: white; /* Cambio de color del texto al pasar el mouse */
+  }
+  

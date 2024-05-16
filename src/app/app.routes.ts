@@ -5,6 +5,8 @@ import { QuienSoyComponent } from './components/quien-soy/quien-soy.component';
 import { RutaFalsaComponent } from './ruta-falsa/ruta-falsa.component';
 import { PreguntadosComponent } from './components/preguntados/preguntados.component';
 import { MayorMenorComponent } from './components/mayor-menor/mayor-menor.component';
+import { ChatComponent } from './components/chat/chat.component';
+
 
 export const routes: Routes = [ {
     path: '',
@@ -21,6 +23,10 @@ export const routes: Routes = [ {
 {
     path: 'login',
     component: LoginComponent,
+},
+{
+    path: 'home/chat',
+    component: ChatComponent,
 },
 {
     path: 'quienSoy',

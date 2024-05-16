@@ -1,0 +1,100 @@
+.chat-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 70vh; /* Establece el alto del contenedor al 100% del viewport */
+  padding: 20px; /* Agrega un poco de espacio alrededor del contenedor */
+  box-sizing: border-box; /* Asegura que el padding se incluya en la altura total */
+  top: -400px;
+  z-index: 9999;
+}
+
+
+
+.message-box {
+  flex: 1; 
+  overflow-y: auto; 
+  padding: 10px;
+}
+
+.message {
+  margin-bottom: 10px;
+  
+}
+
+.user {
+  font-weight: bold;
+}
+
+.color-blue {
+  color: blue;
+}
+
+.color-green {
+  color: green;
+}
+
+.color-pink {
+  color: pink;
+}
+
+.rounded-container {
+  border-radius: 10px; /* Borde redondeado */
+  padding: 10px; /* Espaciado interno */
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo ligeramente transparente */
+}
+
+
+.rounded-container {
+  border-radius: 10px; /* Borde redondeado */
+  padding: 10px; /* Espaciado interno */
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo ligeramente transparente */
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.input-box input {
+  flex: 1; 
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-box button {
+  padding: 8px 16px;
+  margin-left: 10px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-box button:hover {
+  background-color: #0056b3;
+}
+
+.botton {
+  padding: 10px 20px; /* Ajusta el espaciado interno del botón */
+  border: none; /* Elimina el borde */
+  border-radius: 5px; /* Agrega bordes redondeados */
+  background-color: #4CAF50; /* Color de fondo verde */
+  color: white; /* Color de texto blanco */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s; /* Efecto de transición suave */
+}
+
+.botton:hover {
+  background-color: #45a049; /* Cambia el color de fondo al pasar sobre el botón */
+}
+
+.botton:active {
+  background-color: #4CAF50; /* Restaura el color de fondo cuando se hace clic */
+  transform: translateY(2px); /* Agrega un efecto de elevación al hacer clic */
+}

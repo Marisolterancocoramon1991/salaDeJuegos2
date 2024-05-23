@@ -6,6 +6,9 @@ import { RutaFalsaComponent } from './ruta-falsa/ruta-falsa.component';
 import { PreguntadosComponent } from './components/preguntados/preguntados.component';
 import { MayorMenorComponent } from './components/mayor-menor/mayor-menor.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { AhorcadoComponent } from './components/ahorcado/ahorcado.component';
+import { JuegoMemoriaComponent } from './components/juego-memoria/juego-memoria.component';
+import { BuscaMinasComponent } from './components/busca-minas/busca-minas.component';
 
 
 export const routes: Routes = [ {
@@ -27,6 +30,18 @@ export const routes: Routes = [ {
 {
     path: 'home/chat',
     component: ChatComponent,
+},
+{
+    path: 'home/ahorcado',
+    component: AhorcadoComponent,
+},
+{
+    path: 'home/buscaminas',
+    component: BuscaMinasComponent,
+},
+{
+    path: 'home/juegoMemoria',
+    component: JuegoMemoriaComponent,
 },
 {
     path: 'quienSoy',

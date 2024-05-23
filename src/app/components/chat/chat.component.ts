@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { ChatService } from '../../services/chat.service';
 import { ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { Validacion } from '../../clases/validacion';
 
 @Component({
   selector: 'app-chat',
@@ -28,7 +29,7 @@ export class ChatComponent implements OnInit {
   }
 
   enviarMensaje() {
-    this.chatService.enviarMensaje(this.mensajeInput.nativeElement.value, "kervin@gmail.com")
+    this.chatService.enviarMensaje(this.mensajeInput.nativeElement.value, Validacion.obtenerCorreo())
       .then(() => {
         this.obtenerMensajes();
         this.mensajeInput.nativeElement.value = '';

@@ -1,7 +1,7 @@
 .botonesImagenes {
     position: fixed; /* Establece la posición fija */
-    top: 50%; /* Alinea el contenedor al centro verticalmente */
-    left: 50%; /* Alinea el contenedor al centro horizontalmente */
+    top: 60%; /* Alinea el contenedor al centro verticalmente */
+    left: 60%; /* Alinea el contenedor al centro horizontalmente */
     transform: translate(-50%, -50%); /* Centra el contenedor */
     z-index: 9999; /* Asegura que esté por encima de todo */
 }

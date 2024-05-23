@@ -1,0 +1,27 @@
+/* Estilos para el contenedor global */
+.global-container {
+    /* Ajusta los estilos según sea necesario */
+    width: 70%; /* Opcional: especifica un ancho */
+    max-width: 1200px; /* Opcional: especifica un ancho máximo */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    position: relative; /* Cambia la posición del contenedor */
+    top: -350px; /* Mueve el contenedor verticalmente */
+    z-index: 9999;
+  }
+
+  .word-container {
+    background-color: white;
+    border-radius: 15px; /* Ajusta el valor para el redondeado que desees */
+    padding: 10px; /* Ajusta el valor según tu necesidad */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra suave si lo deseas */
+  }
+
+.lives-container 
+{
+  background-color: white;
+  border-radius: 15px; /* Ajusta el valor para el redondeado que desees */
+  padding: 10px; /* Ajusta el valor según tu necesidad */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra suave si lo deseas */
+
+}
+  

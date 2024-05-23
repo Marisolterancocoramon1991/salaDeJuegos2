@@ -1,0 +1,25 @@
+<div class="global-container">
+  <div class="d-flex justify-content-center">
+    <div class="ahorcado">
+      <app-timer></app-timer>
+      <br>
+      <div class="word-container m-2">
+        <app-ahorcado-palabra [guesses]="guesses" [word]="word"></app-ahorcado-palabra>
+      </div>
+      <app-ahorcado-teclado class="m-2" (keyPressed)="guess($event)" [word]="word"></app-ahorcado-teclado>
+      <div class="lives-container m-2">
+        <span class="vida">Vidas restantes: {{ lives }}</span>
+      </div>
+      <ng-template  [ngIf]="restartGameBtnShown">
+        <div class="word-container m-2">
+        <h1>La palabra era: {{ word }}</h1>
+      </div>
+        <button (click)="reset()" class="m-2">
+          Jugar de nuevo
+        </button>
+        <button (click)="goToHome()">salir</button>
+      </ng-template>
+    </div>
+  </div>
+</div>
+

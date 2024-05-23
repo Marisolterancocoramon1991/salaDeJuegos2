@@ -1,0 +1,110 @@
+
+
+
+.container
+{
+
+  margin: center;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(15, 165, 235, 0.5);
+  top: 150px;
+  width: 50%;
+  margin-left: 250px;
+  margin-top: -150px;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 9999;
+}
+.board {
+    display: flexbox;
+    flex-direction: column;
+    z-index: 9999;
+    margin: center;
+    margin-left: 200px;
+    border-radius: 10px;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .cell {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #85f801;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .cell-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+  }
+  
+  .cell.revealed {
+    background-color: #230edb;
+  }
+  
+  .cell.mine {
+    color: rgb(255, 0, 0);
+  }
+  .titulo {
+    z-index: 1;
+    position: relative;
+      display: inline-block; /* Permite que la barra redondeada se ajuste al contenido */
+      padding: 10px 20px; /* Ajusta el espacio dentro del título */
+      background-color: rgba(255, 255, 255, 0.3); /* Barra redondeada con opacidad */
+      border-radius: 20px; /* Borde redondeado */
+      font-weight: bold; /* Texto en negrita */
+      font-family: 'Arial', sans-serif; /* Estilo de fuente ciberpunk */
+      color: #bb0202; /* Color de texto ciberpunk */
+      text-shadow: 2px 2px 4px #000000; /* Sombra de texto ciberpunk */
+      margin-top: -30px; /* Ajusta la posición vertical hacia arriba */
+  }
+  .message-box {
+    background-color: #fff;
+    border: 1px solid #3612d3;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(110, 90, 90, 0.1); /* Sombra para darle algo de profundidad */
+    text-align: center; /* Centrar el texto */
+  }
+  
+  .message-box p {
+    color: #044d1a; /* Color llamativo para el texto */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 1.2em; /* Aumentar un poco el tamaño del texto */
+  }
+  /* Estilos para el botón con aspecto roquero */
+.button {
+  background-color: #ff3333; /* Color de fondo rojo */
+  color: #fff; /* Texto en color blanco */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: background-color 0.3s; /* Transición suave de color de fondo */
+  border-radius: 10px;
+  margin-right: 10px;
+  border: 2px solid; /* Ancho del borde */
+  border-color: #000000; /* Color del borde */
+}
+
+/* Estilos para el botón cuando se pasa el mouse por encima */
+.button:hover {
+  background-color: #179b2d; /* Color de fondo rojo oscuro */
+}
+
+/* Estilos para el botón cuando se hace clic */
+.button:active {
+  transform: translateY(2px); /* Desplaza el botón hacia abajo al hacer clic */
+}
+
+  

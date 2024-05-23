@@ -1,0 +1,15 @@
+<div class="keyboard">
+  <div class="keys">
+    <div *ngFor="let k of keys" 
+         (click)="onKeyClick(k)" 
+         class="key btn" 
+         [class.btn--disabled]="k.guessed">
+      <div class="key-char">
+        <button mat-mini-fab class="{{ k.error ? 'warn' : k.guessed ? 'primary' : 'accent' }}">
+          {{ k.value }}
+        </button>         
+      </div>
+    </div>
+  </div>
+</div>
+

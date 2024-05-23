@@ -1,0 +1,26 @@
+
+@if(existeCorreo()) 
+  {
+<div class="container">
+  <br>
+<div class="board">
+    <div *ngFor="let row of board; let i = index" class="row">
+      <div *ngFor="let cell of row; let j = index" class="cell" (click)="revealCell(i, j)">
+        <div class="cell-content" [ngClass]="{'mine': cell.isMine, 'revealed': cell.revealed}">{{ cell.value }}</div>
+      </div>
+    </div>
+    
+  </div>
+  <br>
+  <div class="message-box">
+    <p>{{ message }}</p><button class="button" *ngIf="gameOver" (click)="restartGame()" (click)="showStars()">Reiniciar partida</button><button class="button" *ngIf="gameOver" (click)="goToHome()" (click)="showStars()">Salir</button>
+  </div>
+  <br>
+  <title class="titulo">buscaMinas</title>
+</div>
+}@else
+{
+
+  <button class="button" class="bottonsalirDirecto" *ngIf="gameOver" (click)="goToHome()" (click)="showStars()">Salir</button>
+
+}

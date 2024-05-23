@@ -35,7 +35,7 @@
         <span>
           
           <button class="button" id="buttonsalir" (click)="llevarLogin()">salir de la sesion</button>
-          
+          <button class="button"  (click)="llevarChat()">Chat global</button>
 
         </span>
       } @else 
@@ -45,7 +45,7 @@
           
         </span>
       } 
-      <button class="button" id="buttonQuiensoy">¿Quièn soy?</button>
+      <button class="button" id="buttonQuiensoy" (click)="irQuienSoy()">¿Quièn soy?</button>
       @if(existeCorreo()) 
       {
         <p #parrafoCorreo></p>
@@ -67,6 +67,7 @@
         <img src="../../assets/imagenes/ahorcado.png" (click)="llevarAhorcado()">
         <img src="../../assets/imagenes/mayorMenor.webp" (click)="llevarMayorMenor()">
         <img src="../../assets/imagenes/preguntados.jpg" (click)="llevarPreguntados()">
+        <img src="../../assets/buscaMinasImagen.png" (click)="llevarBuscaMinas()">
       </div>
     </span>
   }

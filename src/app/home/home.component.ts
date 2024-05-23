@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
   }
 
   llevarAhorcado() {
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('/home/ahorcado');
   }
 
   llevarMayorMenor() {
@@ -48,6 +48,17 @@ export class HomeComponent implements OnInit {
 
   llevarPreguntados() {
     this.router.navigateByUrl('preguntados');
+  }
+  llevarBuscaMinas()
+  {
+    this.router.navigateByUrl('/home/buscaminas');
+  }
+  irQuienSoy(){
+    this.router.navigateByUrl('quienSoy');
+  }
+  llevarChat()
+  {
+    this.router.navigateByUrl('home/chat');
   }
 }
 

@@ -3,6 +3,13 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Validacion } from '../../clases/validacion';
 
+interface Cell {
+  isMine: boolean;
+  revealed: boolean;
+  value: number;
+  color: string;
+}
+
 @Component({
   selector: 'app-busca-minas',
   standalone: true,
@@ -16,12 +23,13 @@ export class BuscaMinasComponent {
   rows: number = 8; // Número de filas del tablero
   cols: number = 8; // Número de columnas del tablero
   mines: number = 10; // Número de minas en el tablero
-  board: any[] = []; // Matriz que representa el tablero
+  board: Cell[][] = []; // Matriz que representa el tablero
   message: string = ''; // mensaje a revelar
   gameOver: boolean = false;
   point: number = 0;
 
-  constructor(private router: Router){}
+  constructor(private router: Router) {}
+  
   existeCorreo() { 
     return Validacion.obtenerCorreo();
   }
@@ -37,7 +45,7 @@ export class BuscaMinasComponent {
     for (let i = 0; i < this.rows; i++) {
       this.board[i] = [];
       for (let j = 0; j < this.cols; j++) {
-        this.board[i][j] = { isMine: false, revealed: false, value: 0 };
+        this.board[i][j] = { isMine: false, revealed: false, value: 0, color: 'transparent' };
       }
     }
   }
@@ -79,26 +87,38 @@ export class BuscaMinasComponent {
     }
   }
 
-  // Revelar casilla
+  // Obtener la matriz de números
+  getNumberMatrix(): number[][] {
+    return this.board.map(row => row.map((cell: Cell) => cell.value));
+  }
+
+  // Manejar el clic en una celda
   revealCell(row: number, col: number): void {
     if (!this.board[row][col].revealed) { // Verificar si la celda ya ha sido revelada
       if (this.board[row][col].isMine) {
         this.board[row][col].color = 'green'; 
         console.log("estoy adentro");
         this.message = '¡Ups! Has tocado una mina. ¡Juego terminado!';
-        this.gameOver= true;
+        this.gameOver = true;
       } else {
         // Si la casilla no tiene una mina, simplemente cambiamos su color de fondo
         this.board[row][col].color = 'red';
-        this.point++;
-        this.message = '¡Bien hecho! Has evitado la mina. Tienes esta puntuacion: '+ this.point;
-        console.log("es correcta la entrada");
+        if(this.board[row][col].value === 0)
+          {
+            this.point++;
+            this.message = '¡Bien hecho! Has evitado la mina. Tienes esta puntuación: ' + this.point;
+          }else
+          {
+            this.point += this.board[row][col].value; // Sumar el valor de la celda al puntaje
+            this.message = '¡Bien hecho! Has evitado la mina. Tienes esta puntuación: ' + this.point;
+            console.log("es correcta la entrada");
+
+          }
         
       }
       this.board[row][col].revealed = true; // Marcar la celda como revelada
     }
   }
-  
 
   // Reiniciar juego
   restartGame(): void {
@@ -108,10 +128,11 @@ export class BuscaMinasComponent {
     this.placeMines();
     // Recalcular los números adyacentes
     this.calculateAdjacent();
-    this.gameOver= false;
-    this.message="nueva partida...";
+    this.gameOver = false;
+    this.message = "nueva partida...";
     this.point = 0;
   }
+
   goToHome() {
     this.router.navigate(['/home']);
   }  
@@ -119,5 +140,4 @@ export class BuscaMinasComponent {
   showStars() {
     document.body.classList.add('stars-effect');
   }
-  
 }

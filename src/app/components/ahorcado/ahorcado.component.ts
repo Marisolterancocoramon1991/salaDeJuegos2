@@ -10,6 +10,7 @@ import { AhorcadoTecladoComponent } from '../ahorcado-teclado/ahorcado-teclado.c
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-ahorcado',
@@ -53,25 +54,42 @@ export class AhorcadoComponent implements OnInit, OnDestroy {
   guess(obj: { keyValue: string, score: number }) {
     let letter = obj.keyValue;
     this.puntos = obj.score;
-
+  
     if (this.guesses.length == 0) {
       this.timerComponent.startTimer();      
     }
-
+  
     if (!letter || this.guesses.includes(letter)) {
       return;
     }
-
+  
     this.guesses = [...this.guesses, letter];
-
+  
     if (!this.word.includes(letter)) {
       this.lives--; // Reducir vidas si la letra no está en la palabra
     }
+  
+    const wordGuessed = this.word.split('').every(letter => this.guesses.includes(letter));
+  
+    if (wordGuessed) {
+      Swal.fire({
+        title: '¡excelente!',
+        text: '¡Usted ha podido a divinar la palabra exacta!'+ this.word + '¡Èxitos con la siguiente!',
+        icon: 'success',
+        confirmButtonText: '¡Entendido!',
+        customClass: {
+          container: 'custom-alert-container',
+          confirmButton: 'custom-confirm-button'
+        },
+        backdrop: '#2196F3' // Fondo azul
+      });
+      this.reset();
 
-    if (this.lives === 0) {
+    } else if (this.lives === 0) {
       this.onGameFinished(false);
     }
   }
+  
 
 
   reset() {
@@ -88,6 +106,7 @@ export class AhorcadoComponent implements OnInit, OnDestroy {
       const randomIndex = Math.floor(Math.random() * this.words.length);
       this.puntos = 0;
       this.word = this.words[randomIndex];
+      console.log('Palabra seleccionada:', this.word);
       this.guesses = [];   
       this.lives = 6; // Reiniciar vidas   
     });   
@@ -100,6 +119,7 @@ export class AhorcadoComponent implements OnInit, OnDestroy {
     {
       this.calculatePoints()
       this.puntuacion.agregarPuntuacion(Validacion.obtenerCorreo(), this.puntos, "Ahorcado");
+      this.reset();
     }else{
       this.puntos = 0;
     }
